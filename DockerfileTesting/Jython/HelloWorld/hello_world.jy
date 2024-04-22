@@ -1,0 +1,18 @@
+# Import the Java class
+from java.util import Calendar
+
+# Get the current date
+current_date = Calendar.getInstance().getTime()
+
+# Print the current date in a specific format
+print "Current Date: " + str(current_date.year)
+
+# Access a static method from a Java class (assuming a helper class)
+class Helper:
+  @staticmethod
+  def double_a_number(number):
+    return number * 2
+
+# Call the static method from the Helper class
+doubled_value = Helper.double_a_number(10)
+print "Doubled Value: " + str(doubled_value)

@@ -1,0 +1,7 @@
+docker build -t testimage .
+docker run --rm testimage
+
+
+The -t flag, along with <image-name>, specifies the name you want to tag the image with during the build process. 
+
+Purpose: The --rm flag tells Docker to remove the container automatically after it exits. This means the container and its file system will be deleted unless you use a volume to persist data.

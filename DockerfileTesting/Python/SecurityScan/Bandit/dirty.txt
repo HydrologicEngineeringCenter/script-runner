@@ -1,0 +1,61 @@
+Run started:2024-03-28 20:54:05.605247
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'password123'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.8/plugins/b105_hardcoded_password_string.html
+   Location: /app/dirty.py:3:11
+2	username = "admin"
+3	password = "password123"
+4	
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.8/blacklists/blacklist_calls.html#b307-eval
+   Location: /app/dirty.py:22:9
+21	user_expression = input("Enter an expression to evaluate: ")
+22	result = eval(user_expression)
+23	print(f"The result is: {result}")
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.8/blacklists/blacklist_calls.html#b311-random
+   Location: /app/dirty.py:26:16
+25	# Insecure random number generation
+26	random_number = random.randint(1, 10)
+27	
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.8/plugins/b608_hardcoded_sql_expressions.html
+   Location: /app/dirty.py:36:12
+35	# Code vulnerable to SQL Injection
+36	sql_query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+37	cursor.execute(sql_query)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 18
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 2
+		Medium: 2
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 1
+		Medium: 1
+		High: 2
+Files skipped (0):

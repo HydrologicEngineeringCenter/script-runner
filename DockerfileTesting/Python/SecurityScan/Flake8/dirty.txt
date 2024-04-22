@@ -1,0 +1,12 @@
+dirty.py:5:1: E302 expected 2 blank lines, found 1
+dirty.py:6:3: F841 local variable 'connection' is assigned to but never used
+dirty.py:6:3: E111 indentation is not a multiple of 4
+dirty.py:6:16: F821 undefined name 'connect'
+dirty.py:7:3: E114 indentation is not a multiple of 4 (comment)
+dirty.py:10:1: E305 expected 2 blank lines after class or function definition, found 1
+dirty.py:15:3: E111 indentation is not a multiple of 4
+dirty.py:26:17: F821 undefined name 'random'
+dirty.py:30:1: E402 module level import not at top of file
+dirty.py:36:80: E501 line too long (92 > 79 characters)
+dirty.py:37:1: F821 undefined name 'cursor'
+dirty.py:40:47: W292 no newline at end of file

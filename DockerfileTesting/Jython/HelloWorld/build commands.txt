@@ -1,0 +1,2 @@
+docker build -t my_jython_image .
+docker run my_jython_image
